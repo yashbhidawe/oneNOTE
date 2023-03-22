@@ -121,4 +121,10 @@ border-radius: 10px;
 button {
   cursor: pointer;
 }
+@media screen and (max-width: 390px) {
+  #addBtn {
+    padding: 0.7rem;
+    margin-top: 0.6rem;
+  }
+}
 
