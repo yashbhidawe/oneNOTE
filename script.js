@@ -12,30 +12,7 @@ const notesFromLocalStorage = JSON.parse(localStorage.getItem(`notesArray`));
 if (notesFromLocalStorage) {
   render(notesFromLocalStorage);
 } 
-// script.js
-// function render(notesArray) {
-//   let listItems = ``;
-//   for (let i = 0; i < notesArray.length; i++) {
-//     listItems += `
-//       <div class="outerDiv">
-//         <div class="width80">
-//           <li>${notesArray[i]}</li>
-//         </div>
-//         <div class="flex">
-//           <div class="edit">
-//             <button class="button" id="${i}" onclick="editNote(${i})">Edit</button>
-//           </div>
-//           <div class="delete">
-//             <button class="button" id="${i}" onclick="deleteNote(${i})">Delete</button>
-//           </div>
-//         </div>
-//       </div>
-//       <hr>
-//     `;
-//   }
-//   note.innerHTML = listItems;
-// }
-// Format depends on user's locale
+
 function render(notesArray) {
   const currentDateTime = new Date();
   const formattedDateTime = currentDateTime.toLocaleString(); 
@@ -92,7 +69,6 @@ addBtn.addEventListener("click", function () {
 
 textBox.addEventListener(`keypress`, function (event) {
   if (event.key === `Enter`) {
-    console.log(`entered`);
 
     renderFunction();
     localStorageFunction();
@@ -139,36 +115,3 @@ function editNote(i) {
 
 
 
-// addBtn.addEventListener(`click`, function ()  {
-//   notesArray.push(textBox.value);
-// textBox.value = ``;
-// for(let i = 0; i < notesArray.length; i++){
-//   let div = document.createElement(`div`);
-//   div.classList.add(`notes`);
-//   div.innerHTML = ``
-//   div.textContent += notesArray.pop();
-//   taskList.appendChild(div)
-
-// }
-// })
-
-// textBox.addEventListener(`keypress`, function(event){
-//     if(event.key === `Enter`) {
-
-// notesArray.push(textBox.value);
-// textBox.value = ``;
-// for(let i = 0; i < notesArray.length; i++){
-//   let div = document.createElement(`div`);
-//   div.textContent += notesArray.pop();
-//   taskList.appendChild(div);
-// div.classList.add(`notes`);
-
-//   localStorage.setItem(`notesArray`, JSON.stringify(div.textContent));
-//   console.log(div.textContent);
-//  div.textContent = localStorage.getItem(JSON.parse(`notesArray`));
-
-// }
-// }
-
-// }
-// );
